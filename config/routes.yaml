@@ -1,0 +1,43 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+Patient_list:
+  path: /api/v1/patient
+  controller: App\Controller\PatientController:indexActionPatient
+  methods: [GET]
+
+Patient_create:
+  path: /api/v1/patient
+  controller: App\Controller\PatientController:createActionPatient
+  methods: [POST]
+
+Docteur_list:
+  path: /api/v1/docteur
+  controller: App\Controller\PatientController:indexActionDocteur
+  methods: [GET]
+
+Docteur_create:
+  path: /api/v1/docteur
+  controller: App\Controller\PatientController:createActionDocteur
+  methods: [POST]
+
+Rdv_show:
+    path: /api/v1/patient/{id}/rdv
+    controller: App\Controller\RdvController:showActionRdv
+    methods: [ GET ]
+    requirements:
+      id: '\d+'
+
+Rdv_create:
+    path: /api/v1/patient/rdv
+    controller: App\Controller\RdvController:createActionRdv
+    methods: [ POST ]
+
+Rdv_delete:
+  path: /api/v1/patient/{patientId}/rdv/{rdId}
+  controller: App\Controller\RdvController:deleteAction
+  methods: [ DELETE ]
+  requirements:
+    patientid: '\d+'
+    rdvId: '\d+'
+
